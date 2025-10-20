@@ -4,282 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nulljcd</title>
-    <style>
-        @font-face {
-            font-family: "firecode";
-            src: url('res/fonts/firacode.ttf') format('truetype');
-        }
-
-        ::-webkit-scrollbar {
-            width: 0;
-        }
-
-        html {
-            height: 100%;
-            background-color: #f3eadb;
-            font-family: "firecode";
-        }
-
-        body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        #main_container {
-            width: 100%;
-            max-width: 700px;
-            height: 100%;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        #navigation_bar {
-            width: 100%;
-            height: 40px;
-            border-bottom: #807395 2px solid;
-            display: flex;
-            align-items: center;
-        }
-
-        #navigation_bar_username {
-            width: min-content;
-            font-weight: 1000;
-            color: #f3eadb;
-            background-color: #ee6a7c;
-            cursor: default;
-            font-size: 20px;
-            padding: 2px;
-            border-radius: 5px;
-        }
-
-        #navigation_bar_spacer {
-            flex-grow: 1;
-        }
-
-        .navigation_bar_link {
-            color: #34acba;
-            cursor: pointer;
-            padding: 2px;
-            border-radius: 5px;
-        }
-
-        .navigation_bar_link_selected {
-            color: #f3eadb;
-            background-color: #34acba;
-            cursor: pointer;
-            padding: 2px;
-            border-radius: 5px;
-        }
-
-        .navigation_bar_link:hover {
-            color: #f3eadb;
-            background-color: #34acba;
-        }
-
-        .navigation_bar_link_spacer {
-            color: #34acba;
-            cursor: default;
-        }
-
-        #content_container {
-            width: 100%;
-            height: calc(100% - 42px);
-            overflow-y: scroll;
-        }
-
-        #home_content {
-            color: #807395;
-            padding-top: 80px;
-            padding-bottom: 80px;
-            text-align: center;
-        }
-
-        #about_content {
-            color: #807395;
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-
-        #about_header {
-            font-size: 18px;
-            font-weight: 1000;
-        }
-
-        .about_spacer {
-            border-top: #807395 1px solid;
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-
-        #projects_content {
-            color: #807395;
-            padding-top: 80px;
-            padding-bottom: 80px;
-        }
-
-        .project_tile {
-            border-left: #807395 2px solid;
-            cursor: pointer;
-        }
-
-        .project_tile_header {
-            color: #f3eadb;
-            background-color: #807395;
-        }
-
-        .project_tile_description {
-            padding-left: 10px;
-            color: #807395;
-        }
-
-        .project_tile_spacer {
-            padding-bottom: 50px;
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
+    <title>nulljcd::home</title>
+    <link rel="stylesheet" href="global_style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="main_container">
         <div id="navigation_bar">
-            <div id="navigation_bar_username">nulljcd</div>
+            <div id="navigation_bar_logo">nulljcd</div>
             <div id="navigation_bar_spacer"></div>
-            <div id="navigation_bar_home" class="navigation_bar_link">home</div>
-            <div class="navigation_bar_link_spacer">|</div>
-            <div id="navigation_bar_about" class="navigation_bar_link">about</div>
-            <div class="navigation_bar_link_spacer">|</div>
-            <div id="navigation_bar_projects" class="navigation_bar_link">projects</div>
+            <div class="navigation_bar_link_selected" onclick="window.location = `${base_url}/index.html`;">/home/</div>
+            <div class="navigation_bar_link" onclick="window.location = `${base_url}/about/index.html`;">/about/</div>
+            <div class="navigation_bar_link" onclick="window.location = `${base_url}/projects/index.html`;">/projects/</div>
         </div>
         <div id="content_container">
-            <div id="home_content" hidden>
-                Hey there!
-                <br>
+            <div id="content">
+                <div class="header">Hey there!</div>
                 <br>
                 This site serves as a personal portfolio and project hub. It's a clean little space to showcase
                 what I've built.
             </div>
-            <div id="about_content" hidden>
-                <div id="about_header">Jacob Campanile</div>
-                <div class="about_spacer"></div>
-                aur naur
-            </div>
-            <div id="projects_content" hidden>
-                <div id="projects_list">
-                    <div class="project_tile">
-                        <div class="project_tile_header">Machine Learning</div>
-                        <div class="project_tile_description">Exploring how machine learning works in depth to better understand AI. what do you want from me im just trying to make this text longer so i can see if it works well.</div>
-                    </div>
-                    <div class="project_tile_spacer"></div>
-                    <div class="project_tile">
-                        <div class="project_tile_header">Machine Learning</div>
-                        <div class="project_tile_description">Exploring how machine learning works in depth to better understand AI. what do you want from me im just trying to make this text longer so i can see if it works well.</div>
-                    </div>
-                    <div class="project_tile_spacer"></div>
-                    <div class="project_tile">
-                        <div class="project_tile_header">Machine Learning</div>
-                        <div class="project_tile_description">Exploring how machine learning works in depth to better understand AI. what do you want from me im just trying to make this text longer so i can see if it works well.</div>
-                    </div>
-                    <div class="project_tile_spacer"></div>
-                    <div class="project_tile">
-                        <div class="project_tile_header">Machine Learning</div>
-                        <div class="project_tile_description">Exploring how machine learning works in depth to better understand AI. what do you want from me im just trying to make this text longer so i can see if it works well.</div>
-                    </div>
-                    <div class="project_tile_spacer"></div>
-                    <div class="project_tile">
-                        <div class="project_tile_header">Machine Learning</div>
-                        <div class="project_tile_description">Exploring how machine learning works in depth to better understand AI. what do you want from me im just trying to make this text longer so i can see if it works well.</div>
-                    </div>
-                    <div class="project_tile_spacer"></div>
-                    <div class="project_tile">
-                        <div class="project_tile_header">Machine Learning</div>
-                        <div class="project_tile_description">Exploring how machine learning works in depth to better understand AI. what do you want from me im just trying to make this text longer so i can see if it works well.</div>
-                    </div>
-                    <div class="project_tile_spacer"></div>
-                    <div class="project_tile">
-                        <div class="project_tile_header">Machine Learning</div>
-                        <div class="project_tile_description">Exploring how machine learning works in depth to better understand AI. what do you want from me im just trying to make this text longer so i can see if it works well.</div>
-                    </div>
-                </div>
-                <div id="projects_full_pages">
-
-                </div>
-            </div>
         </div>
     </div>
 
-    <script>
-        // structs
-
-        let Page = {
-            HOME: 0,
-            ABOUT: 1,
-            PROJECTS: 2
-        };
-
-        // global variables
-
-        let current_page = Page.HOME;
-
-        // functions
-
-        function update_current_page() {
-            switch (current_page) {
-                case Page.HOME: {
-                    document.querySelector("#navigation_bar_home").className = "navigation_bar_link_selected";
-                    document.querySelector("#navigation_bar_about").className = "navigation_bar_link";
-                    document.querySelector("#navigation_bar_projects").className = "navigation_bar_link";
-                    document.querySelector("#home_content").hidden = false;
-                    document.querySelector("#about_content").hidden = true;
-                    document.querySelector("#projects_content").hidden = true;
-                    document.title = "nulljcd::home";
-                    break;
-                }
-                case Page.ABOUT: {
-                    document.querySelector("#navigation_bar_home").className = "navigation_bar_link";
-                    document.querySelector("#navigation_bar_about").className = "navigation_bar_link_selected";
-                    document.querySelector("#navigation_bar_projects").className = "navigation_bar_link";
-                    document.querySelector("#home_content").hidden = true;
-                    document.querySelector("#about_content").hidden = false;
-                    document.querySelector("#projects_content").hidden = true;
-                    document.title = "nulljcd::about";
-                    break;
-                }
-                case Page.PROJECTS: {
-                    document.querySelector("#navigation_bar_home").className = "navigation_bar_link";
-                    document.querySelector("#navigation_bar_about").className = "navigation_bar_link";
-                    document.querySelector("#navigation_bar_projects").className = "navigation_bar_link_selected";
-                    document.querySelector("#home_content").hidden = true;
-                    document.querySelector("#about_content").hidden = true;
-                    document.querySelector("#projects_content").hidden = false;
-                    document.title = "nulljcd::projects";
-                    break;
-                }
-            }
-        }
-
-        // listeners
-
-        window.onload = () => update_current_page();
-        document.querySelector("#navigation_bar_home").onclick = () => {
-            current_page = Page.HOME;
-            update_current_page();
-        };
-        document.querySelector("#navigation_bar_about").onclick = () => {
-            current_page = Page.ABOUT;
-            update_current_page();
-        };
-        document.querySelector("#navigation_bar_projects").onclick = () => {
-            current_page = Page.PROJECTS;
-            update_current_page();
-        };
-    </script>
+    <script src="global_script.js"></script>
 </body>
 
 </html>
