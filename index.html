@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nulljcd</title>
+    <style>
+        @font-face {
+            font-family: "firecode";
+            src: url('res/fonts/firacode.ttf') format('truetype');
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+
+        html {
+            height: 100%;
+            background-color: #f4f0e9;
+            font-family: "firecode";
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        #main_container {
+            width: 100%;
+            max-width: 700px;
+            height: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        #navigation_bar {
+            width: 100%;
+            height: 40px;
+            border-bottom: #75648e 2px solid;
+            display: flex;
+            align-items: center;
+        }
+
+        #navigation_bar_username {
+            width: min-content;
+            font-weight: 1000;
+            color: #f4f0e9;
+            background-color: #ee6a7c;
+            cursor: default;
+            font-size: 20px;
+            padding: 2px;
+            border-radius: 5px;
+        }
+
+        #navigation_bar_spacer {
+            flex-grow: 1;
+        }
+
+        .navigation_bar_link {
+            color: #34acba;
+            cursor: pointer;
+            padding: 2px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .navigation_bar_link_selected {
+            color: #f4f0e9;
+            background-color: #34acba;
+            cursor: pointer;
+            padding: 2px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .navigation_bar_link:hover {
+            color: #f4f0e9;
+            background-color: #34acba;
+        }
+
+        .navigation_bar_link_spacer {
+            color: #34acba;
+            cursor: default;
+        }
+
+        #content_container {
+            width: 100%;
+            height: calc(100% - 42px);
+            overflow-y: scroll;
+        }
+
+        #test_content {
+            color: #75648e;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main_container">
+        <div id="navigation_bar">
+            <div id="navigation_bar_username">nulljcd</div>
+            <div id="navigation_bar_spacer"></div>
+            <div id="navigation_bar_home" class="navigation_bar_link">home</div>
+            <div class="navigation_bar_link_spacer">|</div>
+            <div id="navigation_bar_about" class="navigation_bar_link">about</div>
+            <div class="navigation_bar_link_spacer">|</div>
+            <div id="navigation_bar_projects" class="navigation_bar_link">projects</div>
+        </div>
+        <div id="content_container">
+            <div id="test_content">
+                Hi there!
+                <br>
+                Welcome to my little website.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let Page = {
+            HOME: 0,
+            ABOUT: 1,
+            PROJECTS: 2
+        };
+
+        //
+
+        let current_page = Page.HOME;
+
+        //
+
+        function update_navigation_bar_link_style() {
+            switch (current_page) {
+                case Page.HOME: {
+                    document.querySelector("#navigation_bar_home").className = "navigation_bar_link_selected";
+                    document.querySelector("#navigation_bar_about").className = "navigation_bar_link";
+                    document.querySelector("#navigation_bar_projects").className = "navigation_bar_link";
+                    break;
+                }
+                case Page.ABOUT: {
+                    document.querySelector("#navigation_bar_home").className = "navigation_bar_link";
+                    document.querySelector("#navigation_bar_about").className = "navigation_bar_link_selected";
+                    document.querySelector("#navigation_bar_projects").className = "navigation_bar_link";
+                    break;
+                }
+                case Page.PROJECTS: {
+                    document.querySelector("#navigation_bar_home").className = "navigation_bar_link";
+                    document.querySelector("#navigation_bar_about").className = "navigation_bar_link";
+                    document.querySelector("#navigation_bar_projects").className = "navigation_bar_link_selected";
+                    break;
+                }
+            }
+        }
+
+        //
+
+        update_navigation_bar_link_style();
+    </script>
+</body>
+
+</html>
